@@ -3,6 +3,9 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 .metadata/
+.recommenders/
+learn/src/com/
+learn/src/test/
 # Package Files #
 *.jar
 *.war
