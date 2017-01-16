@@ -1,18 +1,25 @@
-package czfshine.json.tojson;
+package czfshine.json.tojson.test;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import czfshine.json.tojson.BadObject;
+import czfshine.json.tojson.Encoder;
+import czfshine.json.tojson.JsonLoop;
+
 
 //Main run and test
 public class toJson {
 	static Encoder en= new Encoder();
 	private static void p(Object o){
-		try {
-			System.out.println(en.tojson(o));
-		} catch (JsonLoop e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+			try {
+				System.out.println(en.tojson(o));
+			} catch (JsonLoop | BadObject e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	
 	}
 	public static void main(String[] args){
 		
@@ -62,6 +69,10 @@ public class toJson {
 		
 		//other object
 		p(en);
+		
+		Jsonabletest JT =new Jsonabletest();
+		p(JT);
+		
 		
 		
 	}
