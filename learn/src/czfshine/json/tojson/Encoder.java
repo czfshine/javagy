@@ -3,6 +3,8 @@ package czfshine.json.tojson;
 import java.lang.reflect.Array;
 import java.util.*;
 
+import czfshine.lang.inline.inline;
+
 public class Encoder {
 	private int level = 0;
 	public int MAXLEVEL = 100;
@@ -17,7 +19,7 @@ public class Encoder {
 	public <T> String tojson(T o) throws JsonLoop, BadObject {
 
 		Start();
-
+		
 		// base type:
 		if (o == null) {
 			writer.add("null");
@@ -34,7 +36,7 @@ public class Encoder {
 		} else if (o instanceof Queue) {
 			writer.add(tostr((Queue<?>) o));
 		} else if (o instanceof Set) {
-			writer.add(tostr((Set<?>) o));
+			set((Set<?>) o);
 		} else if (o instanceof Vector) {
 			writer.add(tostr((Vector<?>) o));
 		} else if (o instanceof Character) {
@@ -44,7 +46,7 @@ public class Encoder {
 		} else if (o instanceof StringBuffer) {
 			writer.add(tostr((StringBuffer) o));
 		}
-		
+
 		// array
 		else if (o.getClass().isArray()) {
 			arr(o);
@@ -61,24 +63,44 @@ public class Encoder {
 
 	}
 
+	// 下面这些会自动被inline，不用考虑开销
+	// 把他们当做宏吧= =!
+	// 用到泛型的就不行，不管啦
+	@inline
+	private String format(String str) {
+		
+		//TODO : @#$%^^&
+		return "\"" + str + "\"";
+	}
+
+	@inline
 	private String tostr(StringBuffer o) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return format(o.toString());
 	}
 
+	@inline
 	private String tostr(Character o) {
+		
+		//TODO:hex
+		
+		return format("\\u" + (int) o.charValue());
+	}
+
+	private <T extends Enum<T>> String tostr(Enum<T> o) {
 		// TODO Auto-generated method stub
+
 		return null;
 	}
 
-	private String tostr(Enum<?> o) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	private <T> void set(Set<T> o) throws JsonLoop, BadObject {
 
-	private String tostr(Set<?> o) {
-		// TODO Auto-generated method stub
-		return null;
+		writer.beginArray();
+		for (T v : o) {
+			tojson(v);
+			writer.sub();
+		}
+		writer.endArray();
 	}
 
 	private String tostr(Queue<?> o) {
@@ -111,6 +133,7 @@ public class Encoder {
 		writer.endArray();
 	}
 
+	@inline
 	private void Start() throws JsonLoop {
 		// System.out.println(level);
 		if (level == 0) {
@@ -124,6 +147,7 @@ public class Encoder {
 
 	}
 
+	@inline
 	private String End() {
 
 		level--;
@@ -134,14 +158,17 @@ public class Encoder {
 		}
 	}
 
+	@inline
 	private String tostr(String str) {
 		return "\"" + str + "\"";
 	}
 
+	@inline
 	private String tostr(Number n) {
 		return n.toString();
 	}
 
+	@inline
 	private Boolean CheckJsonable(Object o) {
 		if (o instanceof jsonable) {
 			writer.add(((jsonable) o).tojson());
@@ -152,7 +179,7 @@ public class Encoder {
 	}
 
 	private Boolean CheckID(Object o) {
-		//TODO
+		// TODO
 		return true;
 	}
 
@@ -165,6 +192,7 @@ public class Encoder {
 
 	}
 
+	@inline
 	private void arr(Object a) throws JsonLoop, BadObject {
 		writer.beginArray();
 		int length = Array.getLength(a);

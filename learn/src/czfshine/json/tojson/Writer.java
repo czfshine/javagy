@@ -1,6 +1,7 @@
 package czfshine.json.tojson;
 
 public abstract class Writer {
+@SuppressWarnings("unused")
 private StringBuffer SB;
 
 public abstract void beginArray();
