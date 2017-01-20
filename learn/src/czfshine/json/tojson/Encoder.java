@@ -19,7 +19,7 @@ public class Encoder {
 	public <T> String tojson(T o) throws JsonLoop, BadObject {
 
 		Start();
-		
+
 		// base type:
 		if (o == null) {
 			writer.add("null");
@@ -68,8 +68,8 @@ public class Encoder {
 	// 用到泛型的就不行，不管啦
 	@inline
 	private String format(String str) {
-		
-		//TODO : @#$%^^&
+
+		// TODO : @#$%^^&
 		return "\"" + str + "\"";
 	}
 
@@ -81,9 +81,9 @@ public class Encoder {
 
 	@inline
 	private String tostr(Character o) {
-		
-		//TODO:hex
-		
+
+		// TODO:hex
+
 		return format("\\u" + (int) o.charValue());
 	}
 
