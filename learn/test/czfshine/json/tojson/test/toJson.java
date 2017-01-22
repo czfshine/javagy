@@ -6,6 +6,7 @@ import java.util.Map;
 import czfshine.json.tojson.BadObject;
 import czfshine.json.tojson.Encoder;
 import czfshine.json.tojson.JsonLoop;
+import czfshine.json.tojson.test.Jsonabletest;
 
 
 //Main run and test
