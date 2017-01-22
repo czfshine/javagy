@@ -7,19 +7,21 @@ import czfshine.lang.inline.inline;
 
 public class Encoder {
 	private int level = 0;
-	public int MAXLEVEL = 100;
+	public int MAXLEVEL;
 
 	private Writer writer;
 
 	public Encoder() {
 		level = 0;
 		writer = new JsonWriter();
-	}
+        MAXLEVEL = 100;
+    }
 	
 	public Encoder(Writer writer) {
 		level = 0;
 		this.writer = writer;
-	}
+        MAXLEVEL = 100;
+    }
 
 	public <T> String tojson(T o) throws JsonLoop, BadObject {
 
@@ -89,7 +91,7 @@ public class Encoder {
 
 		// TODO:hex
 
-		return format("\\u" + (int) o.charValue());
+		return format("\\u" + (int) o);
 	}
 
 	private <T extends Enum<T>> String tostr(Enum<T> o) {
@@ -189,9 +191,7 @@ public class Encoder {
 	}
 
 	private void obj(Object o) throws BadObject {
-		if (CheckJsonable(o) || CheckID(o)) {
-			return;
-		} else {
+		if (!(CheckJsonable(o) || CheckID(o))) {
 			throw new BadObject();
 		}
 
@@ -212,7 +212,7 @@ public class Encoder {
 	private <K, V> void map(Map<K, V> m) throws JsonLoop, BadObject {
 		writer.beginObject();
 
-		for (K k : (Set<K>) ((HashMap<K, V>) m).keySet()) {
+		for (K k : m.keySet()) {
 			Object v = m.get(k);
 			tojson(k);
 			writer.k_v_sub();

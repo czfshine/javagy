@@ -14,15 +14,17 @@ public class toJson {
 	private static void p(Object o){
 		
 			try {
-				System.out.println(en.tojson(o));
+                System.out.println(o);
+				System.out.println("the json"+en.tojson(o));
 			} catch (JsonLoop | BadObject e) {
 				// TODO Auto-generated catch block
+				System.out.println(111);
 				e.printStackTrace();
 			}
 	
 	}
 	public static void main(String[] args){
-		
+		System.out.println(111);
 		//base type
 		p(1);
 		p(1.1);
