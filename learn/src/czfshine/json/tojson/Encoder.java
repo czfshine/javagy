@@ -15,6 +15,11 @@ public class Encoder {
 		level = 0;
 		writer = new JsonWriter();
 	}
+	
+	public Encoder(Writer writer) {
+		level = 0;
+		this.writer = writer;
+	}
 
 	public <T> String tojson(T o) throws JsonLoop, BadObject {
 

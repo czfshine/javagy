@@ -59,16 +59,6 @@ public final class JsonWriter extends Writer {
 		SB.append(s);
 	}
 
-	public String getStr() {
-		return SB.toString();
-	}
-
-	@Override
-	public void Clean() {
-		// todo
-		SB = null;
-		SB = new StringBuffer();
-
-	}
+	
 
 }

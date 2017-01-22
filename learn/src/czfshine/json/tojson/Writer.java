@@ -18,8 +18,15 @@ public abstract class Writer {
 
 	public abstract void add(String s);
 
-	public abstract void Clean();
+	
+	public String getStr() {
+		return SB.toString();
+	}
 
-	public abstract String getStr();
+	public void Clean() {
+		// todo
+		SB = null;
+		SB = new StringBuffer();
 
+	}
 }
