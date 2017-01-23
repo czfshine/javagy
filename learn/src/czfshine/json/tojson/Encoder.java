@@ -22,7 +22,11 @@ public class Encoder {
 		this.writer = writer;
         MAXLEVEL = 100;
     }
-
+	
+	public <T> String trackPath(T o ){
+		//TODO 
+		return "";
+	}
 	public <T> String tojson(T o) throws JsonLoop, BadObject {
 
 		Start();
