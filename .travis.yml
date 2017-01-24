@@ -1,11 +1,10 @@
 language: java
 
 jdk:
-  - oraclejdk7
   - oraclejdk8
 
-install: mvn -f learn install -DskipTests=true
-script: mvn -f learn test
+install: mvn -f tojson install -DskipTests=true
+script: mvn -f tojson test
 
 branches:
   except:
