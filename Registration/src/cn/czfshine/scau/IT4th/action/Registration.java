@@ -1,12 +1,16 @@
-package cn.czfshine.scau.IT4th.service;
+package cn.czfshine.scau.IT4th.action;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.nutz.dao.entity.annotation.Column;
 
 import cn.czfshine.scau.IT4th.dao.RegistDao;
 import cn.czfshine.scau.IT4th.dao.pojo.Team;
@@ -46,15 +50,49 @@ public class Registration extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		response.setContentType("text/html;charset=UTF-8");
+
+		PrintWriter out = response.getWriter();
 		RegistDao Dao=new RegistDao();
-		 
+		
+		//TODO:用反射
+		String team_name=new String(request.getParameter("team_name")+"");  
+	    String master_name=new String(request.getParameter("master_name")+"");
+	  
+	     String master_id=new String(request.getParameter("master_id")+"");
+	     
+	     String master_college=new String(request.getParameter("master_college")+"");
+	   
+	     String master_level=new String(request.getParameter("master_level")+"");
+	    
+	     String master_phone=new String(request.getParameter("master_phone")+"");
+	    
+	     String master_email=new String(request.getParameter("master_email")+"");
+	   
+	     String master_major=new String(request.getParameter("master_major")+"");
+	     
 		
 		Team T= new Team();
+	
+		T.setMaster_college(master_college) ;
 		
-		T.setAge(10);
-		T.setName("test");
-		Dao.AddTeam(T);
+		T.setMaster_email(master_email) ;
+		
+		T.setMaster_id( master_id) ;
+		
+		T.setMaster_level( master_level) ;
+		
+		T.setMaster_major(master_major) ;
+		
+		T.setMaster_name( master_name) ;
+	
+		T.setMaster_phone( master_phone) ;
+		
+		T.setTeam_name( team_name) ;
+		
+		
+
+	Dao.AddTeam(T);
 		doGet(request, response);
 	}
 
