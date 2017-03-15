@@ -2,6 +2,7 @@ package cn.czfshine.scau.IT4th.dao.pojo;
 
 import org.nutz.dao.entity.annotation.*;
 
+
 @Table("dev_2_team_info")   // 声明了Person对象的数据表
 public class Team { // 不会强制要求继承某个类
 

@@ -3,14 +3,12 @@ package cn.czfshine.scau.IT4th.action;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.ServletConfig;
+import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.nutz.dao.entity.annotation.Column;
 
 import cn.czfshine.scau.IT4th.dao.RegistDao;
 import cn.czfshine.scau.IT4th.dao.pojo.Team;
@@ -18,7 +16,7 @@ import cn.czfshine.scau.IT4th.dao.pojo.Team;
 /**
  * Servlet implementation class Registration
  */
-@WebServlet(description = "处理报名信息", urlPatterns = { "/Registration" })
+@WebServlet("/Registration")
 public class Registration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -41,6 +39,7 @@ public class Registration extends HttpServlet {
 	/**
 	 * @see Servlet#destroy()
 	 */
+	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
 	}
@@ -48,11 +47,12 @@ public class Registration extends HttpServlet {
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 
-		PrintWriter out = response.getWriter();
+		
 		RegistDao Dao=new RegistDao();
 		
 		//TODO:用反射
@@ -99,6 +99,7 @@ public class Registration extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
@@ -108,6 +109,7 @@ public class Registration extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

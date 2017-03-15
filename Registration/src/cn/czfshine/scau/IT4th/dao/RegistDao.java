@@ -3,11 +3,7 @@
  */
 package cn.czfshine.scau.IT4th.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.Map;
 
 import org.nutz.dao.Dao;
 import org.nutz.dao.impl.NutDao;
@@ -23,20 +19,24 @@ public class RegistDao {
 	Dao dao ;
 	public RegistDao(){
 		
-		// 创建一个数据源
+		// 鍒涘缓涓�涓暟鎹簮
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
+			Map<String, String> map = System.getenv();
 		
+		String mypw=map.getOrDefault("MYSQLPASSWORD", "12345678");
+		String myservice=map.getOrDefault("MYSQLSERVICE", "localhost");
+		String myuser=map.getOrDefault("MYSQLUSERNAME", "root");
 		SimpleDataSource dataSource = new SimpleDataSource();
-		dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/registr");
-		dataSource.setUsername("root");
-		dataSource.setPassword("12345678");
+		dataSource.setJdbcUrl("jdbc:mysql://"+myservice+":3306/registr");
+		dataSource.setUsername(myuser);
+		dataSource.setPassword(mypw);
 
-		// 创建一个NutDao实例,在真实项目中, NutDao通常由ioc托管, 使用注入的方式获得.
+		// 鍒涘缓涓�涓狽utDao瀹炰緥,鍦ㄧ湡瀹為」鐩腑, NutDao閫氬父鐢眎oc鎵樼, 浣跨敤娉ㄥ叆鐨勬柟寮忚幏寰�.
 		dao = new NutDao(dataSource);
 
-		// 创建表
-		dao.create(Team.class, false); // false的含义是,如果表已经存在,就不要删除重建了.
+		// 鍒涘缓琛�
+		dao.create(Team.class, false); // false鐨勫惈涔夋槸,濡傛灉琛ㄥ凡缁忓瓨鍦�,灏变笉瑕佸垹闄ら噸寤轰簡.
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

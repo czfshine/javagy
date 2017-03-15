@@ -1,0 +1,85 @@
+<% var num=["一","二","三","四"]%>
+<%for (var i=0; i < 4; i++) {%>
+<div id="user<%=i%>">
+  <div id="legend" class="">
+    <legend class="">成员<%=num[i]%></legend>
+  </div>
+  <div class="control-group"> 
+    
+    <!-- Text input-->
+    <label class="control-label" for="input01">姓名</label>
+    <div class="controls">
+      <input type="text" placeholder="placeholder" class="input-xlarge">
+      <p class="help-block">Supporting help text</p>
+    </div>
+  </div>
+  <div class="control-group"> 
+    
+    <!-- Text input-->
+    <label class="control-label" for="input01">学号</label>
+    <div class="controls">
+      <input type="text" placeholder="placeholder" class="input-xlarge">
+      <p class="help-block">Supporting help text</p>
+    </div>
+  </div>
+  <div class="control-group"> 
+    
+    <!-- Select Basic -->
+    <label class="control-label">学院</label>
+    <div class="controls">
+      <select class="input-xlarge">
+        <option>数学与信息学院</option>
+        <option>经济管理学院</option>
+      </select>
+    </div>
+  </div>
+  <div class="control-group"> 
+    
+    <!-- Select Multiple -->
+    <label class="control-label">专业</label>
+    <div class="controls">
+      <select class="input-xlarge" multiple="multiple">
+        <option>计算机科学与技术</option>
+        <option>网络工程</option>
+      </select>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label">年级</label>
+    <div class="controls"> 
+      <!-- Inline Radios -->
+      <label class="radio inline">
+        <input type="radio" value="13" name="nianji" checked="checked">
+        13 </label>
+      <label class="radio inline">
+        <input type="radio" value="14" name="nianji">
+        14 </label>
+      <label class="radio inline">
+        <input type="radio" value="15" name="nianji">
+        15 </label>
+      <label class="radio inline">
+        <input type="radio" value="16" name="nianji">
+        16 </label>
+    </div>
+  </div>
+  <div class="control-group"> 
+    
+    <!-- Text input-->
+    <label class="control-label" for="input01">联系方式</label>
+    <div class="controls">
+      <input type="text" placeholder="联系方式" class="input-xlarge">
+      <p class="help-block">输入长号或短号</p>
+    </div>
+  </div>
+  <div class="control-group"> 
+    
+    <!-- Text input-->
+    <label class="control-label" for="input01">角色</label>
+    <div class="controls">
+      <input type="text" placeholder="placeholder" class="input-xlarge">
+      <p class="help-block">Supporting help text</p>
+    </div>
+  </div>
+</div
+ >
+<%}%>
