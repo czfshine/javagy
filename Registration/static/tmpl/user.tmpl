@@ -1,85 +1,71 @@
-<% var num=["一","二","三","四"]%>
-<%for (var i=0; i < 4; i++) {%>
-<div id="user<%=i%>">
-  <div id="legend" class="">
-    <legend class="">成员<%=num[i]%></legend>
-  </div>
-  <div class="control-group"> 
-    
-    <!-- Text input-->
-    <label class="control-label" for="input01">姓名</label>
-    <div class="controls">
-      <input type="text" placeholder="placeholder" class="input-xlarge">
-      <p class="help-block">Supporting help text</p>
-    </div>
-  </div>
-  <div class="control-group"> 
-    
-    <!-- Text input-->
-    <label class="control-label" for="input01">学号</label>
-    <div class="controls">
-      <input type="text" placeholder="placeholder" class="input-xlarge">
-      <p class="help-block">Supporting help text</p>
-    </div>
-  </div>
-  <div class="control-group"> 
-    
-    <!-- Select Basic -->
-    <label class="control-label">学院</label>
-    <div class="controls">
-      <select class="input-xlarge">
-        <option>数学与信息学院</option>
-        <option>经济管理学院</option>
-      </select>
-    </div>
-  </div>
-  <div class="control-group"> 
-    
-    <!-- Select Multiple -->
-    <label class="control-label">专业</label>
-    <div class="controls">
-      <select class="input-xlarge" multiple="multiple">
-        <option>计算机科学与技术</option>
-        <option>网络工程</option>
-      </select>
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">年级</label>
-    <div class="controls"> 
-      <!-- Inline Radios -->
-      <label class="radio inline">
-        <input type="radio" value="13" name="nianji" checked="checked">
-        13 </label>
-      <label class="radio inline">
-        <input type="radio" value="14" name="nianji">
-        14 </label>
-      <label class="radio inline">
-        <input type="radio" value="15" name="nianji">
-        15 </label>
-      <label class="radio inline">
-        <input type="radio" value="16" name="nianji">
-        16 </label>
-    </div>
-  </div>
-  <div class="control-group"> 
-    
-    <!-- Text input-->
-    <label class="control-label" for="input01">联系方式</label>
-    <div class="controls">
-      <input type="text" placeholder="联系方式" class="input-xlarge">
-      <p class="help-block">输入长号或短号</p>
-    </div>
-  </div>
-  <div class="control-group"> 
-    
-    <!-- Text input-->
-    <label class="control-label" for="input01">角色</label>
-    <div class="controls">
-      <input type="text" placeholder="placeholder" class="input-xlarge">
-      <p class="help-block">Supporting help text</p>
-    </div>
-  </div>
-</div
- >
-<%}%>
+<% var num=["一","二","三","四","五"]%>
+                                <%for (var i=0; i < 5; i++) {%>
+                                    <div id="user<%=i%>" class="hide" >
+                                        <div id="legend" class="">
+                                            <legend class="">成员
+                                                <%=num[i]%>
+                                            </legend>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">姓名</label>
+                                            <div class="col-md-5">
+                                                <input type="text" class="form-control" placeholder="XXX" name="user_name_<%=i%>" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">学号</label>
+                                            <div class="col-md-5">
+                                                <input type="text" class="form-control" placeholder="20XXXXXXXXXX" name="user_id_<%=i%>" />
+                                            </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">年级</label>
+                                        <div class="col-md-5">
+                                            <select class="form-control" name="user_level_<%=i%>">
+                                        <option value="" >--选择年级--</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        
+                                        <option value="16">16</option>
+                                    </select>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div data-toggle="distpicker">
+                                        <div class="form-group">
+
+                                            <label class="col-md-3 control-label " for="province1">学院</label>
+                                            <div class="col-md-5">
+                                                <select class="form-control" id="province1" name="user_collage_<%=i%>"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class=" col-md-3 control-label" for="city1">专业</label>
+                                            <div class="col-md-5">
+                                                <select class="form-control" id="city1" name="user_major_<%=i%>"></select></div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">联系方式</label>
+                                        <div class="col-md-5">
+                                            <input type="text" class="form-control" placeholder="158XXXXXXXX/66XXXX" name="user_phone_<%=i%>" />
+                                            <p class="help-block">输入长号或短号</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">角色</label>
+                                        <div class="col-md-5">
+                                            <input type="text" class="form-control" placeholder="XXX" name="user_role_<%=i%>" />
+                                        </div>
+                                    </div>
+                </div>
+                <%}%>
