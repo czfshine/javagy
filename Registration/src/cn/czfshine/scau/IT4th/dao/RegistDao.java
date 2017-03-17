@@ -23,10 +23,10 @@ public class RegistDao {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Map<String, String> map = System.getenv();
-		
-		String mypw=map.getOrDefault("MYSQLPASSWORD", "12345678");
-		String myservice=map.getOrDefault("MYSQLSERVICE", "localhost");
-		String myuser=map.getOrDefault("MYSQLUSERNAME", "root");
+		System.out.println(map);
+		String mypw=map.getOrDefault("MYSQLPASSWORD", "963852741");
+		String myservice=map.getOrDefault("MYSQLSERVICE", "czfshine.cn");
+		String myuser=map.getOrDefault("MYSQLUSERNAME", "czf");
 		SimpleDataSource dataSource = new SimpleDataSource();
 		dataSource.setJdbcUrl("jdbc:mysql://"+myservice+":3306/registr");
 		dataSource.setUsername(myuser);
