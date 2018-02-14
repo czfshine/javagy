@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="585.0" styleClass="background" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.czfshine.calculator.Controller">
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="84.0" minWidth="0.0" prefWidth="0.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="48.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="48.0" minHeight="-Infinity" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="94.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#del" text="&lt;-" textOverrun="CLIP" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#sub" text="-" textOverrun="CLIP" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="53.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#memoryreset" text="MR" textOverrun="CLIP">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#add" prefHeight="0.0" prefWidth="100.0" text="+" textOverrun="CLIP" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="106.0" maxWidth="84.0" minWidth="84.0" mnemonicParsing="false" onAction="#eq" prefWidth="84.0" styleClass="eq" text="=" textOverrun="CLIP" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="58.0" />
+                     </font></Button>
+               </children>
+            </GridPane>
+         </center>
+         <left>
+            <GridPane fx:id="rpane" maxWidth="500.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LR" text="(" textOverrun="CLIP">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font>
+                  </Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#power2" text="X²" textOverrun="CLIP" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#fact" text="X!" textOverrun="CLIP" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#e" text="e" textOverrun="CLIP" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#sin" text="sin" textOverrun="CLIP" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#inv" text="INV" textOverrun="CLIP" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#RR" text=")" textOverrun="CLIP" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#power3" text="X³" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#mod" text="\%" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ln" text="ln" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cos" text="cos" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#deg" text="DEG" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#sum" text="∑" textOverrun="CLIP" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#product" text="∏" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#integral" text="∫" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#log" text="log" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#tan" text="tan" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#pi" text="π" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#memoryclean" text="MC" textOverrun="CLIP" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clean" text="C" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#num" text="7" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#num" text="4" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button fx:id="num_1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#num" text="1" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#num" text="00" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#memoryadd" text="M+" textOverrun="CLIP" GridPane.columnIndex="4">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#div" text="/" textOverrun="CLIP" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#num" text="8" textOverrun="CLIP" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#num" text="5" textOverrun="CLIP" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#num" text="2" textOverrun="CLIP" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#num" text="0" textOverrun="CLIP" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#memorysub" text="M-" textOverrun="CLIP" GridPane.columnIndex="5">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#mul" text="*" textOverrun="CLIP" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#num" text="9" textOverrun="CLIP" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#num" text="6" textOverrun="CLIP" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#num" text="3" textOverrun="CLIP" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#dot" text="." textOverrun="CLIP" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Source Code Pro Bold" size="19.0" />
+                     </font></Button>
+               </children>
+            </GridPane>
+         </left>
+         <top>
+            <Label fx:id="displayer" alignment="BOTTOM_RIGHT" prefHeight="82.0" prefWidth="498.0" text="01234567448910245555" textFill="WHITE" textOverrun="CLIP" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Consolas" size="47.0" />
+               </font>
+            </Label>
+         </top>
+      </BorderPane>
+   </center>
+   <top>
+      <MenuBar styleClass="menu" stylesheets="@../main.css" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" style="color: 1;" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
